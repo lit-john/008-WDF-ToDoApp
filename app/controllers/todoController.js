@@ -10,10 +10,27 @@
         init();
 
         $scope.addToDo = function() {
-          $log.log("addToDo function called " + $scope.newTodo.name);
+          if ($scope.newTodo && $scope.newTodo.name && $scope.newTodo.dueDate) {
 
+            $scope.newTodo.name = $scope.newTodo.name.trim()
 
-        }
+            if ($scope.newTodo.name.length != 0)
+            {
+              $log.log("addToDo function called " + $scope.newTodo.name + " - " + $scope.newTodo.dueDate);
+
+              var latestTodoList = todoFactory.addToDo($scope.newTodo);
+
+              $scope.newTodo = null;
+
+              $scope.todos = latestTodoList;
+            }
+          }
+
+        };
+
+        $scope.deleteToDo = function(id) {
+          $log.log("Deleting " + id);
+        };
 
 
     };

@@ -1,5 +1,6 @@
 (function() {
     var todoFactory = function($http) {
+        var todoIDCounter = 3;
         var todos = [
             {
               id: 1,
@@ -26,6 +27,14 @@
           // Really I should go to the server and get the array of
           // todo object but for testing I have setup a local array
           // on the factory
+          return todos;
+        }
+
+        factory.addToDo = function(aTodo) {
+          // Really I should send a POST request to the server
+          // posting it this new aTodo object
+          aTodo.id = todoIDCounter++;
+          todos.push(aTodo);
           return todos;
         }
 

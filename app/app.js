@@ -1,6 +1,6 @@
 (function() {
 
-    var app = angular.module('todoApp', ['ngRoute', 'ngAnimate']);
+    var app = angular.module('todoApp', ['ngRoute', 'ngAnimate', 'ngMaterial', 'ngMessages']);
 
     app.config(function($routeProvider) {
         $routeProvider
