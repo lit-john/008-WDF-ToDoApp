@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-md-offset-3">
+      <h1>Welcome to <span data-ng-bind="appName"></span></h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form class="form-inline" id="addTodoForm">
+        <input class="form-control" type="text" placeholder="What need's to be done?" data-ng-model="newTodo.name">
+        <button type="submit" class="btn btn-default" data-ng-click="addToDo()">Add</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row" data-ng-repeat="todo in todos">
+    <div class="col-sm-6">
+      <span data-ng-bind="todo.name"></span>
+    </div>
+  </div>
+
+</div>
